@@ -306,6 +306,18 @@
         "modelNamespace": "SenchaFront.model",
         "name": "Station"
       }
+    },
+    "app/model/Profile.js": {
+      "source": "{modelFileName}.js.tpl.merge",
+      "version": "b440abe61f1cfb3bbc31c9554696b4c7e9e2c329",
+      "parameters": {
+        "appName": "SenchaFront",
+        "baseClass": "Ext.data.Model",
+        "fields": "name:string:null",
+        "modelFileName": "Profile",
+        "modelNamespace": "SenchaFront.model",
+        "name": "Profile"
+      }
     }
   }
 }

@@ -2,6 +2,7 @@ Ext.define('SenchaFront.model.Station', {
     extend: 'Ext.data.Model',
     
     config: {
+        idProperty: 'stationId',
         fields: [
             { name: 'stationId', type: 'int' },
             { name: 'stationPosition', type: 'auto' },

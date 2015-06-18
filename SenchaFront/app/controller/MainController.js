@@ -24,7 +24,7 @@ Ext.define('SenchaFront.controller.MainController', {
                 itemtap: 'listItemTapped'
             },
             navigationView: {
-                back: 'goBack'
+                pop: 'pop'
             }
         }
     },
@@ -61,7 +61,9 @@ Ext.define('SenchaFront.controller.MainController', {
         this.getAddProfileButton().hide();
     },
 
-    goBack: function() {
-        this.getAddProfileButton().show();
+    pop: function(navView, poppedView) {
+        if (poppedView == this.getProfileForm()) {
+            this.getAddProfileButton().show();
+        }
     }
 });

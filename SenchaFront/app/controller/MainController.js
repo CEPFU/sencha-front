@@ -54,8 +54,8 @@ Ext.define('SenchaFront.controller.MainController', {
 
     editProfile: function(record) {
         var navView = this.getNavigationView();
-        // Make the profile edit form
         var form = this.getProfileForm();
+        form.getComponent('submitButton').addListener('tap', this.submitProfileForm, this);
         form.setRecord(record);
         navView.push(form);
         this.getAddProfileButton().hide();
@@ -65,5 +65,10 @@ Ext.define('SenchaFront.controller.MainController', {
         if (poppedView == this.getProfileForm()) {
             this.getAddProfileButton().show();
         }
+    },
+
+    submitProfileForm: function() {
+        var values = this.getProfileForm().getValues();
+
     }
 });

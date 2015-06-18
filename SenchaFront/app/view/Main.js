@@ -8,6 +8,7 @@ Ext.define('SenchaFront.view.Main', {
     config: {
         ui: 'sencha',
         fullscreen: true,
+        id: 'navigationView',
         items: [
             {
                 title: 'Profiles',
@@ -16,6 +17,7 @@ Ext.define('SenchaFront.view.Main', {
                 store: 'profiles',
                 itemTpl: '{name}',
                 scrollable: true,
+                id: 'profileList',
 
                 plugins: [
                     {

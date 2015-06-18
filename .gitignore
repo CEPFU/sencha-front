@@ -1,1 +1,6 @@
 # .gitignore
+
+# Sencha Touch
+SenchaFront/build
+SenchaFront/archive
+SenchaFront/resources/sass/.sass-cache

@@ -1,4 +1,4 @@
-Ext.define('SenchaFront.controller.ProfileListController', {
+Ext.define('SenchaFront.controller.MainController', {
     extend: 'Ext.app.Controller',
 
     requires: [

@@ -32,7 +32,7 @@ Ext.application({
     ],
 
     controllers: [
-        'ProfileListController'
+        'MainController'
     ],
 
     forms: [

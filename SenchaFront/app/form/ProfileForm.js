@@ -7,9 +7,15 @@ Ext.define('SenchaFront.form.ProfileForm', {
     searchTask: Ext.create('Ext.util.DelayedTask',
         function (form, searchText) {
             form.stationStore.filter('stationName', searchText);
+            var newStation = null;
+            if (searchText != "") {
+                if (form.stationStore.getCount() > 0) {
+                    // for now use the first result
+                    newStation = form.stationStore.first();
+                }
+            }
 
-            // for now use the first result
-            form.setStation(form.stationStore.first());
+            form.setStation(newStation);
 
             form.stationStore.clearFilter();
         }

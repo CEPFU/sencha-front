@@ -64,7 +64,21 @@ Ext.define('SenchaFront.controller.MainController', {
     },
 
     submitProfileForm: function() {
-        var values = this.getProfileForm().getValues();
+        var form = this.getProfileForm();
+        var values = form.getValues();
+        var record = form.getRecord();
+        values.station_id = form.station.get('stationId');
 
+        record.beginEdit();
+        var oldData = record.getData();
+        for (var key in oldData) {
+            if (oldData.hasOwnProperty(key) && values.hasOwnProperty(key)) {
+                record.set(key, values[key]);
+            }
+        }
+        record.endEdit();
+        this.getStore().sync();
+
+        this.getNavigationView().pop();
     }
 });

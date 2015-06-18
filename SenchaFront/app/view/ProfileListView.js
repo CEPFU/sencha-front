@@ -10,37 +10,13 @@ Ext.define('SenchaFront.view.ProfileListView', {
         , 'Ext.plugin.ListSwipeAction'],
     xtype: 'profilelistview',
 
-
     config: {
         store: 'Profiles',
-        itemTpl: '{name} ({station_id})',
-        scrollable: true
-
-
-        , plugins: {
+        itemTpl: '{name}',
+        scrollable: true,
+        plugins: {
             type: 'listswipeaction',
-            removeText: 'Delete'
+            deleteButton: true
         }
-
-        /*
-        // Toolbar
-        , items: {
-            docked: 'top',
-            title: 'Profiles',
-            xtype: 'toolbar',
-            inline: true,
-            items: [
-                {
-                    xtype: 'spacer'
-                },
-                {
-                    xtype: 'button',
-                    iconCls: 'add',
-                    ui: 'action',
-                    id: 'addProfileButton'
-                }
-            ]
-        }
-        */
     }
 });

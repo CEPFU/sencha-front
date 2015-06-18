@@ -1,9 +1,9 @@
-Ext.define('SenchaFront.view.ProfileForm', {
+Ext.define('SenchaFront.form.ProfileForm', {
     extend: 'Ext.form.Panel',
     xtype: 'profileform',
     
     config: {
-        title: 'ProfileForm',
+        title: 'Edit Profile',
         
         items: [
             {
@@ -19,7 +19,8 @@ Ext.define('SenchaFront.view.ProfileForm', {
             {
                 xtype: 'button',
                 text: 'Submit',
-                ui: 'confirm'
+                ui: 'confirm',
+                id: 'profileFormSubmitButton'
             }
         ]        
     }

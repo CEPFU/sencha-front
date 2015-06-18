@@ -31,10 +31,8 @@ Ext.define('SenchaFront.view.Main', {
         ],
         navigationBar: {
             ui: 'sencha',
+            id: 'navigationBar',
             items: [
-                {
-                    xtype: 'spacer'
-                },
                 {
                     xtype: 'button',
                     id: 'addProfileButton',

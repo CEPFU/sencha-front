@@ -9,7 +9,12 @@ Ext.define('SenchaFront.controller.MainController', {
         refs: {
             addProfileButton: '#addProfileButton',
             profileList: '#profileList',
-            navigationView: '#navigationView'
+            navigationView: '#navigationView',
+            profileForm: {
+                selector: '#profileForm',
+                xtype: 'profileform',
+                autoCreate: true
+            }
         },
         control: {
             addProfileButton: {
@@ -50,7 +55,7 @@ Ext.define('SenchaFront.controller.MainController', {
     editProfile: function(record) {
         var navView = this.getNavigationView();
         // Make the profile edit form
-        var form = Ext.create('SenchaFront.form.ProfileForm');
+        var form = this.getProfileForm();
         form.setRecord(record);
         navView.push(form);
         this.getAddProfileButton().hide();

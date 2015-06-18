@@ -4,6 +4,7 @@ Ext.define('SenchaFront.form.ProfileForm', {
     
     config: {
         title: 'Edit Profile',
+        id: 'profileForm',
         
         items: [
             {

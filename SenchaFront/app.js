@@ -18,7 +18,18 @@ Ext.application({
     ],
 
     views: [
-        'Main'
+        'Main',
+        'ProfileListView'
+    ],
+
+    stores: [
+        'Stations',
+        'Profiles'
+    ],
+
+    models: [
+        'Station',
+        'Profile'
     ],
 
     icon: {

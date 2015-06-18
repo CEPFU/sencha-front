@@ -10,6 +10,9 @@ Ext.define('SenchaFront.model.Profile', {
                 type: 'hasOne',
                 model: 'SenchaFront.model.Station'
             }
-        ]
+        ],
+        identifier: {
+            type: 'uuid'
+        }
     }
 });

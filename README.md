@@ -1,2 +1,2 @@
-# sencha-front
-SenchaTouch front end for receiving event notifications
+# Sencha Touch front end
+Sencha Touch front end for receiving event notifications.

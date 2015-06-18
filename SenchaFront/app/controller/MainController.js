@@ -1,9 +1,5 @@
 Ext.define('SenchaFront.controller.MainController', {
     extend: 'Ext.app.Controller',
-
-    requires: [
-        'SenchaFront.form.ProfileForm'
-    ],
     
     config: {
         refs: {

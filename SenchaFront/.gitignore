@@ -5,3 +5,8 @@ touch/
 build/
 archive/
 resources/sass/.sass-cache
+bootstrap.js
+bootstrap.json
+
+# Exclude entire directory?
+resources/css/app.css

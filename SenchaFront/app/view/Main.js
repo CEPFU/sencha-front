@@ -23,7 +23,6 @@ Ext.define('SenchaFront.view.Main', {
                     {
                         type: 'listswipeaction',
                         deleteButton: true,
-                        ui: 'sencha',
                         syncDelete: true
                     }
                 ]

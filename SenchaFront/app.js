@@ -35,6 +35,10 @@ Ext.application({
         'ProfileListController'
     ],
 
+    forms: [
+        'ProfileForm'
+    ],
+
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',

@@ -1,0 +1,7 @@
+# Sencha Touch library
+touch/
+
+# Generated files
+build/
+archive/
+resources/sass/.sass-cache

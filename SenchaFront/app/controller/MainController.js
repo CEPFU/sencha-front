@@ -61,6 +61,7 @@ Ext.define('SenchaFront.controller.MainController', {
 
     pop: function(navView, poppedView) {
         if (poppedView == this.getProfileFormView()) {
+            Ext.StoreManager.get('stations').clearFilter();
             this.getAddProfileButton().show();
         }
     },

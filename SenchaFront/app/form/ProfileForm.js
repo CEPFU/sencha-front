@@ -6,6 +6,7 @@ Ext.define('SenchaFront.form.ProfileForm', {
     searchTask: Ext.create('Ext.util.DelayedTask',
         function (view, form, searchText) {
             var store = Ext.StoreManager.get('stations');
+            store.clearFilter();
             store.filter('stationName', searchText);
         }
     ),

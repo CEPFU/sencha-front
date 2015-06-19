@@ -6,9 +6,10 @@ Ext.define('SenchaFront.controller.MainController', {
             addProfileButton: '#addProfileButton',
             profileList: '#profileList',
             navigationView: '#navigationView',
-            profileForm: {
-                selector: '#profileForm',
-                xtype: 'profileform',
+            profileForm: '#profileForm',
+            profileFormView: {
+                selector: '#profileFormView',
+                xtype: 'profileformview',
                 autoCreate: true
             }
         },
@@ -50,15 +51,16 @@ Ext.define('SenchaFront.controller.MainController', {
 
     editProfile: function(record) {
         var navView = this.getNavigationView();
-        var form = this.getProfileForm();
-        form.getComponent('submitButton').addListener('tap', this.submitProfileForm, this);
+        var formView = this.getProfileFormView();
+        var form = formView.getComponent('profileForm');
+        formView.getComponent('submitButton').addListener('tap', this.submitProfileForm, this);
         form.setRecord(record);
-        navView.push(form);
+        navView.push(formView);
         this.getAddProfileButton().hide();
     },
 
     pop: function(navView, poppedView) {
-        if (poppedView == this.getProfileForm()) {
+        if (poppedView == this.getProfileFormView()) {
             this.getAddProfileButton().show();
         }
     },

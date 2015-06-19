@@ -18,7 +18,8 @@ Ext.application({
     ],
 
     views: [
-        'Main'
+        'Main',
+        'ProfileFormView'
     ],
 
     stores: [

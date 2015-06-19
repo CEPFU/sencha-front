@@ -10,3 +10,9 @@ bootstrap.json
 
 # Exclude entire directory?
 resources/css/app.css
+
+# Cordova
+cordova/www/app.js
+cordova/www/resources
+cordova/www/index.html
+cordova/platforms/

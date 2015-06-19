@@ -38,7 +38,7 @@
             "cordova": {
                 "config": {
                     // Uncomment the line below and add the platforms you wish to build for
-                    "platforms": "ios",
+                    "platforms": "android",
                     "id": "de.fu_berlin.agdb.crepe.sencha",
                     "name": "WeatherNotifier"
                 }

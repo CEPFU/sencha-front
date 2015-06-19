@@ -8,3 +8,7 @@ Sencha Touch front end for receiving event notifications.
 4. Run `ant build`.
 5. Run `sencha web start`.
 6. Open a webbrowser at `localhost:1841`.
+
+# Native Build
+1. Change to directory `SenchaFront`
+2. Run `sencha app build [-run] (ios|android)` build/run for iOS/Android.

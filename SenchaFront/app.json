@@ -18,6 +18,34 @@
      */
     "url": null,
 
+    "builds": {
+        "web": {
+            "default": true
+        },
+        "ios": {
+            "packager": "cordova",
+            "cordova": {
+                "config": {
+                    // Uncomment the line below and add the platforms you wish to build for
+                    "platforms": "ios",
+                    "id": "de.fu_berlin.agdb.crepe.sencha",
+                    "name": "WeatherNotifier"
+                }
+            }
+        },
+        "android": {
+            "packager": "cordova",
+            "cordova": {
+                "config": {
+                    // Uncomment the line below and add the platforms you wish to build for
+                    "platforms": "ios",
+                    "id": "de.fu_berlin.agdb.crepe.sencha",
+                    "name": "WeatherNotifier"
+                }
+            }
+        }
+    },
+
     /**
      * List of all JavaScript assets in the right execution order.
      * Each item is an object with the following format:

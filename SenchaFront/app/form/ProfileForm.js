@@ -62,9 +62,14 @@ Ext.define('SenchaFront.form.ProfileForm', {
         listeners: {
             show: function (form) {
                 this.stationStore = Ext.StoreManager.get('stations');
+
                 // Load information about the station from the store
+                // This is faster than using getRecord().getStation(),
+                // since it doesn't send a request to the server
                 var stationId = form.getRecord().get('station_id');
-                this.setStation(this.stationStore.getById(stationId));
+                var station = this.stationStore.getById(stationId);
+
+                this.setStation(station);
             }
         }
     }

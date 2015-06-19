@@ -8,8 +8,7 @@ Ext.define('SenchaFront.model.Profile', {
         hasOne: [
             {
                 model: 'SenchaFront.model.Station',
-                primaryKey: 'stationId',
-                autoload: true
+                primaryKey: 'stationId'
             }
         ],
         identifier: {

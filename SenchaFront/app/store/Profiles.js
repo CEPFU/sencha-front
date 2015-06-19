@@ -4,10 +4,6 @@ Ext.define('SenchaFront.store.Profiles', {
     config: {
         model: 'SenchaFront.model.Profile',
         storeId: 'profiles',
-        autoLoad: true,
-        proxy: {
-            type: 'localstorage',
-            id: 'weatherprofiles'
-        }
+        autoLoad: true
     }
 });

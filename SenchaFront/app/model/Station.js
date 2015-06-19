@@ -11,6 +11,14 @@ Ext.define('SenchaFront.model.Station', {
             { name: 'stationHeight', type: 'integer' },
             { name: 'stationName', type: 'string' },
             { name: 'federalState', type: 'string' }
-        ]
+        ],
+        proxy: {
+            type: 'jsonp',
+            url: 'http://localhost:8080/stations',
+            reader: {
+                type: 'json'
+            },
+            callbackKey: 'callback'
+        }
     }
 });

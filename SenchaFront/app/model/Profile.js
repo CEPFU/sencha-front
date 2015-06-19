@@ -13,6 +13,10 @@ Ext.define('SenchaFront.model.Profile', {
         ],
         identifier: {
             type: 'uuid'
+        },
+        proxy: {
+            type: 'localstorage',
+            id: 'weatherprofiles'
         }
     }
 });

@@ -8,7 +8,8 @@ Ext.define('SenchaFront.model.Profile', {
         associations: [
             {
                 type: 'hasOne',
-                model: 'SenchaFront.model.Station'
+                model: 'SenchaFront.model.Station',
+                primaryKey: 'stationId'
             }
         ],
         identifier: {

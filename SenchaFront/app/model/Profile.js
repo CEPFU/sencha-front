@@ -5,9 +5,8 @@ Ext.define('SenchaFront.model.Profile', {
         fields: [
             { name: 'name', type: 'string' }
         ],
-        associations: [
+        hasOne: [
             {
-                type: 'hasOne',
                 model: 'SenchaFront.model.Station',
                 primaryKey: 'stationId',
                 autoload: true

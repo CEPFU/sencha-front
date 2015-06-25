@@ -17,6 +17,8 @@
  * under the License.
  */
 var app = {
+    pushNotification: null,
+
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -33,7 +35,19 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        alert("Device ready!");
+
+        try {
+            app.pushNotification = window.plugins.pushNotification;
+            if (device.platform == 'android' || device.platform == 'Android') {
+                pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"786495057781","ecb":"onNotificationGCM"});
+            } else {
+                pushNotification.register(app.tokenHandler, app.errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+            }
+        }
+
         app.receivedEvent('deviceready');
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,7 +59,70 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+
+    successHandler: function (result) {
+        alert("Push register result:"+ result);
+    },
+
+    errorHandler: function (error) {
+        alert("Push register error:"+ error);
+    },
+
+    tokenHandler: function (token) {
+        alert("Received iOS device token:"+ token);
+        // TODO: Send token to backend
+    },
+
+
+    // iOS
+    onNotificationAPN: function (event) {
+        if (event.alert) {
+            navigator.notification.alert(event.alert);
+        }
+
+        /*
+         if (event.sound) {
+         var snd = new Media(event.sound);
+         snd.play();
+         }
+         */
+
+        if (event.badge) {
+            pushNotification.setApplicationIconBadgeNumber(successHandler, event.badge);
+        }
+    },
+
+
+    // Android
+    onNotificationGCM: function (e) {
+        switch( e.event )
+        {
+            case 'registered':
+                if ( e.regid.length > 0 )
+                {
+                    // Your GCM push server needs to know the regID before it can push to this device
+                    // here is where you might want to send it the regID for later use.
+                    alert('registration id =', e.regid);
+                }
+                break;
+
+            case 'message':
+                // this is the actual push notification. its format depends on the data model
+                // of the intermediary push server which must also be reflected in GCMIntentService.java
+                alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+                break;
+
+            case 'error':
+                alert('GCM error =', e.message);
+                break;
+
+            default:
+                alert('An unknown GCM event has occurred');
+                break;
+        }
+}
+
 };
 
 app.initialize();

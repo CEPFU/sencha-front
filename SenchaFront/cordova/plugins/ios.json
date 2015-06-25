@@ -4,10 +4,31 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {}
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"PushPlugin\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "de.fu_berlin.agdb.crepe.sencha"
+        },
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "de.fu_berlin.agdb.crepe.sencha"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "de.fu_berlin.agdb.crepe.sencha"
         }
     },

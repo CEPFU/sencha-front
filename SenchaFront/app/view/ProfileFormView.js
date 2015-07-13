@@ -2,9 +2,10 @@ Ext.define('SenchaFront.view.ProfileFormView', {
     extend: 'Ext.Panel',
     xtype: 'profileformview',
     requires: [
+        'Ext.data.StoreManager',
         'Ext.dataview.List',
-        'SenchaFront.form.ProfileForm',
-        'Ext.util.DelayedTask'
+        'Ext.util.DelayedTask',
+        'SenchaFront.form.ProfileForm'
     ],
 
     setStoreTask: Ext.create('Ext.util.DelayedTask', function (list) {

@@ -1,6 +1,8 @@
 Ext.define('SenchaFront.store.Stations', {
     extend: 'Ext.data.Store',
-    requires: ['Ext.data.proxy.JsonP'],
+    requires: [
+        'SenchaFront.model.Station'
+    ],
     config: {
         model: 'SenchaFront.model.Station',
         storeId: 'stations',

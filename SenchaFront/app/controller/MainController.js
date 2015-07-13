@@ -1,6 +1,12 @@
 Ext.define('SenchaFront.controller.MainController', {
     extend: 'Ext.app.Controller',
-    
+
+    requires: [
+        'Ext.data.StoreManager',
+        'SenchaFront.model.Profile',
+        'SenchaFront.view.ProfileFormView'
+    ],
+
     config: {
         refs: {
             addProfileButton: '#addProfileButton',

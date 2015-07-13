@@ -1,6 +1,11 @@
 Ext.define('SenchaFront.model.Station', {
     extend: 'Ext.data.Model',
-    
+
+    requires: [
+        'Ext.data.proxy.JsonP',
+        'Ext.data.reader.Json'
+    ],
+
     config: {
         idProperty: 'stationId',
         fields: [

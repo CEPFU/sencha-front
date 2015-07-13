@@ -1,6 +1,13 @@
 Ext.define('SenchaFront.form.ProfileForm', {
     extend: 'Ext.form.Panel',
     xtype: 'profileform',
+
+    requires: [
+        'Ext.data.StoreManager',
+        'Ext.field.Text',
+        'Ext.util.DelayedTask'
+    ],
+
     searchTimeout: 1000, // how long to wait after a keyup event before searching
     station: null,
     searchTask: Ext.create('Ext.util.DelayedTask',

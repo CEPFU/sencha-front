@@ -3,9 +3,7 @@ Ext.define('SenchaFront.view.Main', {
     xtype: 'main',
     requires: [
         'Ext.plugin.ListSwipeAction',
-        'Ext.dataview.List',
-        'Ext.util.DelayedTask',
-        'SenchaFront.form.ProfileForm'
+        'Ext.dataview.List'
     ],
     config: {
         ui: 'sencha',

@@ -88,8 +88,41 @@ Ext.define('SenchaFront.controller.MainController', {
         record.endEdit();
         this.getStore().sync();
 
-        // TODO: Generate DSL code for profile
-        // TODO: Send DSL code to backend
+        // Generate DSL code for profile
+        var profileCode = '';
+
+        // Matches
+        // TODO: Generate as many matches as there are conditions?!
+        profileCode += 'Match m1;\n\n';
+
+        profileCode   += 'profile(\n' +
+            'sequence(\n';
+
+        // TODO: iterate over a list of properties
+        profileCode += 'and(m1 = equal("Stations_ID", ' + values.station_id + '), ' +
+            'forEvent(m1, ' +
+            values.operator +
+            '("' + values.attribute + '", ' +
+            values.value + '))))';
+
+        // TODO: Add PushNotification type
+        // TODO: Send some sort of device identifier
+        // Notifications
+        profileCode += ',' +
+            'compositeEventNotification(' +
+            'event("Description", "User profile: ABC"))';
+
+        // Send DSL Code to backend
+        Ext.Ajax.request({
+            url: 'http://localhost:8080/profile',
+            method: 'POST',
+            callback: function(options, success, response) {
+                console.log(response.responseText);
+            },
+            withCredentials: false,
+            useDefaultXhrHeader: false,
+            jsonData: profileCode
+        });
 
         this.getNavigationView().pop();
     }

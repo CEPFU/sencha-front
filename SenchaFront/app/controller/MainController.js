@@ -88,6 +88,9 @@ Ext.define('SenchaFront.controller.MainController', {
         record.endEdit();
         this.getStore().sync();
 
+        // TODO: Generate DSL code for profile
+        // TODO: Send DSL code to backend
+
         this.getNavigationView().pop();
     }
 });

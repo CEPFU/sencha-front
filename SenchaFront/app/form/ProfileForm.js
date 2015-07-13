@@ -4,6 +4,8 @@ Ext.define('SenchaFront.form.ProfileForm', {
 
     requires: [
         'Ext.data.StoreManager',
+        'Ext.field.Number',
+        'Ext.field.Select',
         'Ext.field.Text',
         'Ext.util.DelayedTask'
     ],
@@ -49,6 +51,34 @@ Ext.define('SenchaFront.form.ProfileForm', {
                         form.searchTask.delay(form.searchTimeout);
                     }
                 }
+            },
+            {
+                name: 'attribute',
+                label: 'Attribute',
+                xtype: 'selectfield',
+                options: [
+                    {text: 'Temperature', value: 'temperature'},
+                    {text: 'Wind Speed', value: 'windSpeed'},
+                    {text: 'Humidity', value: 'atmosphereHumidity'}
+                ]
+            },
+            {
+                name: 'operator',
+                label: 'Operator',
+                xtype: 'selectfield',
+                options: [
+                    {text: '=', value: 'equal'},
+                    {text: '<', value: 'less'},
+                    {text: '<=', value: 'lessEqual'},
+                    {text: '>', value: 'greater'},
+                    {text: '>=', value: 'greaterEqual'}
+                ]
+            },
+            {
+                name: 'value',
+                label: 'Value',
+                xtype: 'numberfield',
+                placeHolder: "0"
             }
         ]
     }

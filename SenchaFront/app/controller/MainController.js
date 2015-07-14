@@ -112,6 +112,8 @@ Ext.define('SenchaFront.controller.MainController', {
             'compositeEventNotification(' +
             'event("Description", "User profile: ABC"))';
 
+        profileCode += ')';
+
         // Send DSL Code to backend
         Ext.Ajax.request({
             url: 'http://localhost:8080/profile',

@@ -88,31 +88,25 @@ Ext.define('SenchaFront.controller.MainController', {
         record.endEdit();
         this.getStore().sync();
 
-        // Generate DSL code for profile
-        var profileCode = '';
+        // TODO: Have a list of conditions in the profile form and set 'conditions' to that
+        var conditions = [
+            {
+                operator: values.operator,
+                attribute: values.attribute,
+                value: values.value
+            }
+        ];
 
-        // Matches
-        // TODO: Generate as many matches as there are conditions?!
-        profileCode += 'Match m1;\n\n';
+        // TODO: Add option to form
+        // Mode is all, if not: any
+        var all = true;
 
-        profileCode   += 'profile(\n' +
-            'sequence(\n';
+        // TODO: Use push service identifier?!
+        var deviceID = "TestDevice";
 
-        // TODO: iterate over a list of properties
-        profileCode += 'and(m1 = equal("Stations_ID", ' + values.station_id + '), ' +
-            'forEvent(m1, ' +
-            values.operator +
-            '("' + values.attribute + '", ' +
-            values.value + '))))';
+        var profile = this.profileObject(conditions, all, values.station_id, deviceID);
 
-        // TODO: Add PushNotification type
-        // TODO: Send some sort of device identifier
-        // Notifications
-        profileCode += ',' +
-            'compositeEventNotification(' +
-            'event("Description", "User profile: ABC"))';
-
-        profileCode += ')';
+        console.log(JSON.stringify(profile));
 
         // Send DSL Code to backend
         Ext.Ajax.request({
@@ -123,9 +117,43 @@ Ext.define('SenchaFront.controller.MainController', {
             },
             withCredentials: false,
             useDefaultXhrHeader: false,
-            jsonData: profileCode
+            jsonData: profile
         });
 
         this.getNavigationView().pop();
+    },
+
+    profileObject: function(conditions, all, stationID, deviceID) {
+        var operands = [];
+
+        for (var i = 0, len = conditions.length; i < len; i++) {
+            var cond = conditions[i];
+
+            var op = {
+                "@class": "JSONMatchToStation",
+                matchEvent: {
+                    "@class": "JSON" + cond.operator,
+                    attribute: cond.attribute,
+                    toObject: cond.value
+                },
+                toStation: stationID
+            };
+
+            operands.push(op);
+        }
+
+        return {
+            rule: {
+                "@class": all ? "JSONAnd" : "JSONOr",
+                ofOperands: operands
+            },
+            notifications: [
+                {
+                    // TODO: Insert PushNotification
+                    "@class": "JSONVerboseNotification",
+                    message: "Notification for device: " + deviceID
+                }
+            ]
+        }
     }
 });

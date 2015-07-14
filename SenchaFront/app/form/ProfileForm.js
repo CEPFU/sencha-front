@@ -49,6 +49,12 @@ Ext.define('SenchaFront.form.ProfileForm', {
 
                         form.searchTask.setArgs([view, form, value]);
                         form.searchTask.delay(form.searchTimeout);
+                    },
+                    focus: function (field) {
+                        // TODO: Show the station list
+                    },
+                    blur: function (field) {
+                        // TODO: Hide the station list
                     }
                 }
             },
@@ -67,11 +73,11 @@ Ext.define('SenchaFront.form.ProfileForm', {
                 label: 'Operator',
                 xtype: 'selectfield',
                 options: [
-                    {text: '=', value: 'equal'},
-                    {text: '<', value: 'less'},
-                    {text: '<=', value: 'lessEqual'},
-                    {text: '>', value: 'greater'},
-                    {text: '>=', value: 'greaterEqual'}
+                    {text: '=', value: 'Equal'},
+                    {text: '<', value: 'Less'},
+                    {text: '<=', value: 'LessEqual'},
+                    {text: '>', value: 'Greater'},
+                    {text: '>=', value: 'GreaterEqual'}
                 ]
             },
             {

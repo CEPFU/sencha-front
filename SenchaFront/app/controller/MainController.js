@@ -131,7 +131,7 @@ Ext.define('SenchaFront.controller.MainController', {
 
             var op = {
                 "@class": "JSONMatchToStation",
-                matchEvent: {
+                matchOperator: {
                     "@class": "JSON" + cond.operator,
                     attribute: cond.attribute,
                     toObject: cond.value

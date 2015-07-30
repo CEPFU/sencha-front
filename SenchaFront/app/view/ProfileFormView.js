@@ -29,7 +29,7 @@ Ext.define('SenchaFront.view.ProfileFormView', {
             {
                 xtype: 'list',
                 itemId: 'stationList',
-                itemTpl: '{stationName}, {federalState}',
+                itemTpl: '{locationDescription}',
                 flex: 2
             },
             {

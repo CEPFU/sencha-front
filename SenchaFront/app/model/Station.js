@@ -7,19 +7,15 @@ Ext.define('SenchaFront.model.Station', {
     ],
 
     config: {
-        idProperty: 'stationId',
+        idProperty: 'locationId',
         fields: [
-            { name: 'stationId', type: 'int' },
-            { name: 'stationPosition', type: 'auto' },
-            { name: 'fromDate', type: 'date' },
-            { name: 'untilDate', type: 'date' },
-            { name: 'stationHeight', type: 'integer' },
-            { name: 'stationName', type: 'string' },
-            { name: 'federalState', type: 'string' }
+            { name: 'locationId', type: 'int' },
+            { name: 'locationPosition', type: 'auto' },
+            { name: 'locationDescription', type: 'string' },
         ],
         proxy: {
             type: 'jsonp',
-            url: 'http://localhost:8080/stations',
+            url: 'http://localhost:8080/location',
             reader: {
                 type: 'json'
             },

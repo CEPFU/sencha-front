@@ -76,7 +76,7 @@ Ext.define('SenchaFront.controller.MainController', {
         var form = this.getProfileForm();
         var values = form.getValues();
         var record = form.getRecord();
-        values.station_id = form.station.get('stationId');
+        values.location_id = form.station.get('locationId');
 
         record.beginEdit();
         var oldData = record.getData();
@@ -104,7 +104,7 @@ Ext.define('SenchaFront.controller.MainController', {
         // TODO: Use push service identifier?!
         var deviceID = "TestDevice";
 
-        var profile = this.profileObject(conditions, all, values.station_id, deviceID);
+        var profile = this.profileObject(conditions, all, values.location_id, deviceID);
 
         console.log(JSON.stringify(profile));
 

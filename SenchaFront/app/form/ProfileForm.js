@@ -16,14 +16,15 @@ Ext.define('SenchaFront.form.ProfileForm', {
         function (view, form, searchText) {
             var store = Ext.StoreManager.get('stations');
             store.clearFilter();
-            store.filter('stationName', searchText);
+            store.filter('locationDescription', searchText);
         }
     ),
 
     setStation: function (station) {
         this.station = station;
+        console.log(station);
         if (station != null)
-            this.getComponent('stationTextField').setValue(station.get('stationName'));
+            this.getComponent('stationTextField').setValue(station.get('locationDescription'));
     },
 
     config: {

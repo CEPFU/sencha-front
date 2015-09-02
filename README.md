@@ -12,3 +12,7 @@ Sencha Touch front end for receiving event notifications.
 # Native Build
 1. Change to directory `SenchaFront`
 2. Run `sencha app build [-run] (ios|android)` build/run for iOS/Android.
+
+# License
+
+This app is licensed under the GNU GPL, see the `LICENSE` file for details.
